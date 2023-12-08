@@ -1,10 +1,6 @@
 import React from 'react'
-import { styled } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import CheckIcon from '@mui/icons-material/Check';
 import './TodoActions.css';
 
 function TodoActions(

@@ -3,7 +3,6 @@ import moment from 'moment';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import './TodoHeader.css';
 import DialogModal from "../Dialog/DialogModal";
-import DialogContent from "@mui/material/DialogContent";
 import DisplayTodo from "../DisplayTodo/DisplayTodo";
 
 

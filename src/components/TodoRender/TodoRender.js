@@ -1,51 +1,58 @@
 import React from 'react'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import {pink} from "@mui/material/colors";
+import {green} from "@mui/material/colors";
 import Checkbox from '@mui/material/Checkbox';
 import './TodoRender.css';
+
 
 
 
 const Todo = (
     {
         todo,
-        handleMarkTodo,
+        handleMarkFinishedTodo,
+        handleMarkActiveTodo,
         index,
         handleOpenTodo
     }
 ) =>{
 
-    const isFinishedTodo = todo.isFinished && 'todo-finished'
-
     return(
         <div className='todo-container'>
+
+            <span>
+                <Checkbox color="success" sx={{color: green[800]}}
+                          onClick={(e)=>handleMarkActiveTodo(e.target.checked, index)}
+                          checked={todo.isActive}/>
+            </span>
+
             <span>
                 <Checkbox
-                    icon={<RadioButtonUncheckedIcon />}
-                    checkedIcon={<CheckCircleOutlineIcon />}
-                    onClick={(e)=>handleMarkTodo(e.target.checked, index)}
+                    color="secondary"
+                    sx={{
+                        color: pink[800],
+                    }}
+                    onClick={(e)=>handleMarkFinishedTodo(e.target.checked, index)}
                     checked={todo.isFinished}
                 />
             </span>
-
             <div className='todo-item' onClick={()=>handleOpenTodo({ ...todo, index })}>
-                <span className={isFinishedTodo}>{todo.todoName}</span>
-                <ArrowForwardIosIcon fontSize='small'/>
+                <span>{todo.todoName}</span>
             </div>
         </div>
     )
 }
 
 
-function TodoRender({todos, handleMarkTodo, handleOpenTodo}) {
+function TodoRender({todos, handleMarkFinishedTodo, handleMarkActiveTodo, handleOpenTodo}) {
     return (
         <div className='todos-renderer-wrapper'>
             {todos.map((todo, index)=>(
                 <Todo
                     key={todos.id}
                     todo={todo}
-                    handleMarkTodo={handleMarkTodo}
+                    handleMarkActiveTodo={handleMarkActiveTodo}
+                    handleMarkFinishedTodo={handleMarkFinishedTodo}
                     index={index}
                     handleOpenTodo={handleOpenTodo}
                 />

@@ -20,7 +20,8 @@ function TodoActions(
                 scrollButtons="auto"
                 aria-label="scrollable auto tabs example"
             >
-                <Tab label='Task List' />
+                <Tab label='All tasks' />
+                <Tab label='Current tasks' />
                 <Tab label='Active Tasks' />
                 <Tab label='Done' />
             </Tabs>

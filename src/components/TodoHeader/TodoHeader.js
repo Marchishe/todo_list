@@ -71,7 +71,7 @@ function TodoHeader(
             </div>
 
             <div className='add-todo' onClick={handleOpenDialog}>
-                <AddCircleIcon color='primary'/>
+                <AddCircleIcon color='secondary'/>
                 <span className='icon-background'/>
             </div>
 

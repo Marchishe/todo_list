@@ -6,10 +6,11 @@ import { v4 as uuidv4 } from 'uuid';
 import './Todo.css';
 
 const initialFormData = {
-    isEdit: false,
     todoName: '',
     todoNote: '',
     isFinished: false,
+    isActive: false,
+    isEdit: false,
     id: '',
     index: null
 }
@@ -30,8 +31,10 @@ const setFilterTab = (tab, todos) => {
     if (tab === 0) {
         return todos;
     } else if (tab === 1) {
-        return todos.filter((todo) => !todo.isFinished)
+        return todos.filter((todo) => !todo.isFinished && !todo.isActive)
     } else if (tab === 2) {
+        return todos.filter((todo) => todo.isActive)
+    } else if (tab === 3) {
         return todos.filter((todo) => todo.isFinished)
     }
 }
@@ -76,11 +79,18 @@ function Todo() {
         resetAll();
     }
 
-    const handleMarkTodo = (isChecked, index) => {
+    const handleMarkFinishedTodo = (isChecked, index) => {
         const updatedTodos = todos.slice();
         updatedTodos.splice(index, 1, {...todos[index],isFinished:isChecked});
         setTodos(updatedTodos);
     }
+
+    const handleMarkActiveTodo = (isChecked, index) => {
+        const updatedTodos = todos.slice();
+        updatedTodos.splice(index, 1, {...todos[index],isActive:isChecked});
+        setTodos(updatedTodos);
+    }
+
 
     const handleOpenTodo = (todo) => {
         setIsOpenDisplayTodo(true);
@@ -97,6 +107,8 @@ function Todo() {
         setTodos(todos.filter((item)=>item.id !== formData.id));
         resetAll();
     }
+
+    console.log('todos', todos)
 
 
   return (
@@ -122,7 +134,8 @@ function Todo() {
 
         <TodoRender
             todos={sortedTodos}
-            handleMarkTodo={handleMarkTodo}
+            handleMarkFinishedTodo={handleMarkFinishedTodo}
+            handleMarkActiveTodo={handleMarkActiveTodo}
             handleOpenTodo={handleOpenTodo}
         />
 

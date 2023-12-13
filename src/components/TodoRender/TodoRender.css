@@ -20,8 +20,3 @@
     width: 100%;
     cursor: pointer;
 }
-
-.todo-finished {
-    text-decoration: line-through;
-    color: #9ba5e8;
-}

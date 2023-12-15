@@ -15,13 +15,12 @@ function TodoActions(
         <div className='actions-wrapper'>
             <Tabs
                 value={tab}
-                onChange={(e, tabValue)=>handleChangeTab(tabValue)}
+                onChange={(_, tabValue)=>handleChangeTab(tabValue)}
                 variant="scrollable"
                 scrollButtons="auto"
                 aria-label="scrollable auto tabs example"
             >
                 <Tab label='All tasks' />
-                <Tab label='Current tasks' />
                 <Tab label='Active Tasks' />
                 <Tab label='Done' />
             </Tabs>

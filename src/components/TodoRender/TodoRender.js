@@ -22,7 +22,7 @@ const Todo = (
 
             <span>
                 <Checkbox color="success" sx={{color: green[800]}}
-                          onClick={(e)=>handleMarkActiveTodo(e.target.checked, index)}
+                          onClick={(e)=> handleMarkActiveTodo(e.target.checked, todo.id)}
                           checked={todo.isActive}/>
             </span>
 
@@ -32,7 +32,7 @@ const Todo = (
                     sx={{
                         color: pink[800],
                     }}
-                    onClick={(e)=>handleMarkFinishedTodo(e.target.checked, index)}
+                    onClick={(e)=>handleMarkFinishedTodo(e.target.checked, todo.id)}
                     checked={todo.isFinished}
                 />
             </span>

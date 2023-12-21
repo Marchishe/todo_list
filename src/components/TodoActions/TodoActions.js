@@ -10,7 +10,6 @@ function TodoActions(
     }
 ) {
 
-
     return (
         <div className='actions-wrapper'>
             <Tabs

@@ -14,5 +14,5 @@ form{
 }
 
 .MuiFormControl-root{
-    width: 400px;
+    width: auto;
 }

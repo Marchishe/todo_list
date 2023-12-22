@@ -1,5 +1,75 @@
 
 .actions-wrapper{
+    position: relative;
     padding-bottom: 10px;
 }
+
+.MuiTabs-flexContainer {
+    padding: 10px 0 15px 0;
+}
+
+.actions-wrapper .MuiButtonBase-root {
+    border-radius: 20px;
+}
+
+.actions-wrapper .MuiButtonBase-root:nth-child(1) {
+    color: #1976d2;
+}
+
+.actions-wrapper .MuiButtonBase-root:nth-child(2) {
+    color: #008000;
+}
+
+.actions-wrapper .MuiButtonBase-root:nth-child(3) {
+    color: #9c27b0;
+}
+
+.ready-tasks .MuiTouchRipple-root:after {
+    content: '';
+    position: absolute;
+    scale: 0;
+    top: 37px;
+    left: 12px;
+    width: 81px;
+    height: 1px;
+    transition: .3s;
+    background-color: #1976d2;
+}
+
+.active-tasks .MuiTouchRipple-root:after {
+    content: '';
+    position: absolute;
+    scale: 0;
+    top: 37px;
+    left: 12px;
+    width: 106px;
+    height: 1px;
+    transition: .3s;
+    background-color: #008000;
+}
+
+.finished-tasks .MuiTouchRipple-root:after {
+    content: '';
+    position: absolute;
+    scale: 0;
+    top: 37px;
+    left: 14px;
+    width: 60px;
+    height: 1px;
+    transition: .3s;
+    background-color: #9c27b0;
+}
+
+.Mui-selected .MuiTouchRipple-root:after {
+    scale: 1;
+}
+
+.white-element{
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #ffffff;
+    bottom: 9px;
+}
+
 

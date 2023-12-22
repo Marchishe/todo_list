@@ -23,7 +23,7 @@ const DisplayTodo = ({
       </DialogTitle>
       <DialogContent>
         <div>
-          <div>{formData.todoNote}</div>
+          <div><p>{formData.todoNote}</p></div>
           <div>Created at: {formatDate(formData.timeCreated)}</div>
           <div>Start at: {formatDate(formData.timeEdited)}</div>
           <div>Finished at: {formatDate(formData.timeFinished)}</div>

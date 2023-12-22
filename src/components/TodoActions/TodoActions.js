@@ -19,10 +19,11 @@ function TodoActions(
                 scrollButtons="auto"
                 aria-label="scrollable auto tabs example"
             >
-                <Tab label='All tasks' />
-                <Tab label='Active Tasks' />
-                <Tab label='Done' />
+                <Tab className='ready-tasks' label='All tasks' />
+                <Tab className='active-tasks' label='Active Tasks' />
+                <Tab className='finished-tasks' label='Done' />
             </Tabs>
+            <div className='white-element'></div>
         </div>
     );
 }

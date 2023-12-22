@@ -18,7 +18,7 @@ const DialogModal = (
 ) => {
     return(
         <Dialog open={isOpen} onClose={handleOpenDialog}>
-            <DialogTitle>{formData.isEdit ? 'Edit todo' : 'Add new todo'}</DialogTitle>
+            <DialogTitle>{formData.isEdit ? 'Edit task' : 'Add new task'}</DialogTitle>
             <DialogContent>
                 <form onSubmit={handleSetTodoOnSubmit}>
                     <TextField

@@ -9,6 +9,7 @@ function formatDate(dateObj) {
 
   return dateObj.toLocaleDateString("en-us", {
     weekday: "long",
+    //year: "numeric",
     month: "short",
     day: "numeric",
     hour: 'numeric',
